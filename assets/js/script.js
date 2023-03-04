@@ -3,8 +3,17 @@ const mouseBlob = document.getElementById("mouse-blob")
 document.onpointermove = function(event){
     const {clientX, clientY} = event;
     console.log(clientX, clientY)
-    mouseBlob.style.left = `${clientX}px`
-    mouseBlob.style.top = `${clientY}px`
+
+    mouseBlob.animate({
+        left : `${clientX}px`,
+        top : `${clientY}px`
+    },{
+        duration : 300,
+        easing : "ease",
+        fill : "forwards"
+    })
+    // mouseBlob.style.left = `${clientX}px`
+    // mouseBlob.style.top = `${clientY}px`
 } 
 
 const button = document.getElementsByTagName("button")
